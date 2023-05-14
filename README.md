@@ -7,3 +7,5 @@ ResNet18: A pre-trained ResNet18 model was fine-tuned for the facial expression 
 MobileNetV2: A pre-trained MobileNetV2 model was fine-tuned for the facial expression recognition task.
 SqueezeNet1_0: A pre-trained SqueezeNet1_0 model was fine-tuned for the facial expression recognition task.
 ShuffleNetV2_x1_0: A pre-trained ShuffleNetV2_x1_0 model was fine-tuned for the facial expression recognition task.
+
+Link where the model is deployed: https://huggingface.co/spaces/ruthvik2/DLOps_Project_1
