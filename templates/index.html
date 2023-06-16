@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Emotion Classifier App</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <style>
+    body {
+      background-image: url('static/img/background.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .form-signin 
+    {
+        background-color: rgba(255, 255, 255, 0.8);
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px #000;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: bold;
+      color: #212529;
+    }
+
+    .form-control {
+      border-radius: 5px;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 2px 2px #000;
+    }
+
+    h3 {
+      text-align: center;
+      margin-top: 20px;
+      color: #212529;
+    }
+
+    select {
+      border-radius: 5px;
+      border: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Emotion Classifier App</h1>
+  </header>
+
+  <main>
+    <form method="post" enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <label for="image">Upload an image here</label>
+        <input type="file" name="image" class="form-control" id="image">
+      </div>
+
+      <div class="mb-3">
+        <label for="models">Select model</label>
+        <select class="form-select" name="models" id="models">
+          <option value="resnet">ResNet18</option>
+          <option value="squeezenet">SqueezeNet</option>
+          <option value="shufflenet">ShuffleNet</option>
+          <option value="mobilenet">MobileNet</option>
+        </select>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Upload &amp; Predict</button>
+
+    </form>
+
+    {% if prediction %}
+    <img src="static/temp/{{image_p}}" height="256" width="256">
+    <h3>Predicted emotion: {{prediction}}</h3>
+    {% endif %}
+
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
